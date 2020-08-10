@@ -14,6 +14,9 @@ import logo from './logo.svg';
 import './App.css';
 
 import Footer from './components/Footer'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
 
 class App extends Component {
 
@@ -31,12 +34,12 @@ class App extends Component {
         subTitle: 'SubTitle',
         text: 'Take a look at my projects below'
       },
-      About: {
+      about: {
         title: 'About Me',
         subTitle: 'SubTitle',
         text: 'Take a look at my projects below'
       },
-      Contact: {
+      contact: {
         title: 'Get in touch',
         subTitle: 'SubTitle',
         text: 'Take a look at my projects below'
@@ -59,7 +62,39 @@ class App extends Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-          <p>Body</p>
+          <Route
+          exact
+          path='/'
+          render={
+            () => <
+            Home
+            title={ this.state.home.title }
+            subTitle={ this.state.home.subTitle }
+            text={ this.state.home.text }
+            />
+          }/>
+          <Route
+          exact
+          path='/about'
+          render={
+            () => <
+            About
+            title={ this.state.about.title }
+            subTitle={ this.state.about.subTitle }
+            text={ this.state.about.text }
+            />
+          }/>
+          <Route
+          exact
+          path='/contact'
+          render={
+            () => <
+            Contact
+            title={ this.state.contact.title }
+            subTitle={ this.state.contact.subTitle }
+            text={ this.state.contact.text }
+            />
+          }/>
           <Footer />
         </Container>
       </Router>
