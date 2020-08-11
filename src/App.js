@@ -10,7 +10,6 @@ import {
   Nav
 } from 'react-bootstrap';
 
-import logo from './logo.svg';
 import './App.css';
 
 import Footer from './components/Footer'
